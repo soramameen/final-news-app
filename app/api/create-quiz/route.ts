@@ -11,14 +11,16 @@ export async function GET(): Promise<NextResponse> {
 
     // 5件の記事からクイズを生成するPromiseの配列
     const quizPromises = quizData.articles.map(async (article) => {
-      const prompt = `以下のニュースタイトルと内容から簡単なIT関連のクイズを1問生成し、質問と正解をJSON形式で返してください。
+      const prompt = `以下のニュースタイトルと内容から簡単なIT関連のクイズを1問生成し、質問と正解、3つの選択肢（正解を含む）をJSON形式で返してください。
       必ず守る条件：
       **返答としてJSONデータのみを返し、説明文や余計なテキストは一切含めないでください。**
-      JSON形式: {"question": "質問文", "answer": "正解"}
+      JSON形式: {"question": "質問文", "answer": "正解", "options": ["選択肢1", "選択肢2", "選択肢3"]}
+      optionではなくoptionsであることに注意してください。
       すべて日本語で、自然で簡潔な文にしてください。
       タイトルと内容を読んでいない人が問題を通してIT関連の知識を学べるようにしてください。
       エンジニアにとって実用的で意味のある情報（技術、トレンド、影響など）を含め、無関係な雑学は避けてください。
-      ダメな例: {"question": "AIが仕事を奪うと懸念されている職業は何ですか？", "answer": "声優"}
+      選択肢は正解を1つ含み、他の2つは関連性のある誤った選択肢にしてください。
+      ダメな例: {"question": "AIが仕事を奪うと懸念されている職業は何ですか？", "answer": "声優", "options": ["声優", "医者", "教師"]}
       タイトル: ${article.title}
       内容: ${article.content}`;
 
@@ -41,7 +43,7 @@ export async function GET(): Promise<NextResponse> {
 
       const groqData = await groqRes.json();
       const content = groqData.choices[0].message.content;
-      console.log(`Groq content for ${article.title}:`, content); // デバッグ用
+      console.log(`Groq content for ${article.title}:`, content);
 
       const quizContent = JSON.parse(content);
 
@@ -50,6 +52,7 @@ export async function GET(): Promise<NextResponse> {
         quiz: {
           question: quizContent.question,
           answer: quizContent.answer,
+          option: quizContent.options,
         },
       };
     });

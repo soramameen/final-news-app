@@ -8,7 +8,7 @@ export interface QuizData {
 export interface QuizItem {
   question: string;
   answer: string;
-  options?: string[];
+  option?: string[]; //本当はoptionsだが，Groqがどうしてもoptionをかえすため
 }
 export interface QuizWithQuestions {
   quizzes: { title: string; quiz: QuizItem }[];

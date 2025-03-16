@@ -3,36 +3,61 @@
     {
       "title": "Hear what Horizon Zero Dawn actor Ashly Burch thinks about AI taking her job - The Verge",
       "quiz": {
-        "question": "AIが職種を奪うと心配されるクリエイターはおらしますか?",
-        "answer": "声優"
+        "question": "世界的ゲームの声優であるAshly Burchが心配する技術は何ですか？",
+        "answer": "AI",
+        "option": [
+          "AI",
+          "VR",
+          "Motion Capture"
+        ]
       }
     },
     {
       "title": "AI coding assistant Cursor reportedly tells a ‘vibe coder’ to write his own damn code - TechCrunch",
       "quiz": {
-        "question": "AI coding assistantがuserに対して与える態度は何ですか？",
-        "answer": "仕事を手伝えることを指示する"
+        "question": "AI coding assistantがユーザーに与えた書き込むように言ったフレーズは何ですか？",
+        "answer": "write his own damn code",
+        "option": [
+          "write his own damn code",
+          "learn how to code",
+          "write better code"
+        ]
       }
     },
     {
       "title": "Everything you say to your Echo will be sent to Amazon starting on March 28 - Ars Technica",
       "quiz": {
-        "question": "Amazon Echoの音声をどこかに送信している起動日付は何ですか？",
-        "answer": "3月28日"
+        "question": "Amazonが音声アシスタントのデータをどこに送信することを始める？",
+        "answer": "Amazon",
+        "option": [
+          "Amazon",
+          "Google",
+          "Microsoft"
+        ]
       }
     },
     {
       "title": "The CRKD Nitro Deck for the Switch Just Dropped to Its Lowest-Ever Price - IGN",
       "quiz": {
-        "question": "Nintendo Switchの握りやすくしているハンディーモードのソリューションは?",
-        "answer": "Joystick"
+        "question": "Nintendo Switchのハンドヘルドモードで不快演生する要 因は何ですか？",
+        "answer": "コントローラーのComfort",
+        "option": [
+          "コントローラーのComfort",
+          "画面のサイズ",
+          "バッテリーの持続時間"
+        ]
       }
     },
     {
       "title": "Google is replacing Google Assistant with Gemini - TechCrunch",
       "quiz": {
-        "question": "GoogleはAndroidスマートフォンでGoogle Assistantを置き換えるために、新しいAssistantを使用するようです。この新しいAssistantは何ですか？",
-        "answer": "Gemini"
+        "question": "Google Assistantを置き換える名前は何ですか？",
+        "answer": "Gemini",
+        "option": [
+          "Gemini",
+          "Google Assistant",
+          "Chromium"
+        ]
       }
     }
   ]
