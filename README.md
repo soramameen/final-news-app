@@ -1,36 +1,42 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 今日の IT クイズ
 
-## Getting Started
+IT エンジニア向けに毎日更新されるクイズを提供する Web アプリ。最新の IT トレンドを楽しく学び、技術的知識を深めることを目的としています。Next.js で構築し、Vercel でデプロイされています。
 
-First, run the development server:
+## 概要
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- **目的**: IT トレンドをクイズ形式で学び、エンジニアのスキルアップを支援。
+- **技術スタック**:
+  - Next.js (React, TypeScript)
+  - Tailwind CSS (スタイリング)
+  - Groq API (クイズ生成)
+  - Vercel (ホスティング)
+- **データソース**: `app/data/quiz.json` のニュース記事からクイズを生成。
+- **現在のバージョン**: v1.0.0 (2025 年 3 月 15 日時点)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 機能
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1. **タイトル画面**: クイズ開始前に概要と注意書きを表示。
+   - 注意書き: 「※AI 生成のため、誤りがある場合があります」
+2. **クイズ進行**: 1 問ずつ表示、即時フィードバック付き。
+   - 質問、3 択選択肢（ランダム）、アドバイスを Groq が生成。
+   - 回答後、正誤とアドバイスを表示し「次へ」で進行。
+3. **総合フィードバック**: 全 5 問終了後、スコアと全問題の振り返り。
+   - 各問題の正誤とアドバイスを一覧表示。
+4. **クイズ生成 API**: `/app/api/create-quiz/route.ts` でニュースからクイズを生成。
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## セットアップ
 
-## Learn More
+### 前提条件
 
-To learn more about Next.js, take a look at the following resources:
+- Node.js (v18.x 以上)
+- Vercel (デプロイ用)
+- Groq API キー (`GROQ_API_KEY` 環境変数に設定)
+- News API キー (`NEWS_API_KEY` 環境変数に設定)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### ローカル開発
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. リポジトリをクローン:
+   ```bash
+   git clone <repository-url>
+   cd today-it-quiz
+   ```
