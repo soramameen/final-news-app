@@ -11,18 +11,19 @@ export async function GET(): Promise<NextResponse> {
 
     // 5件の記事からクイズを生成するPromiseの配列
     const quizPromises = quizData.articles.map(async (article) => {
-      const prompt = `以下のニュースタイトルと内容から簡単なIT関連のクイズを1問生成し、質問と正解、3つの選択肢（正解を含む）をJSON形式で返してください。
-      必ず守る条件：
-      **返答としてJSONデータのみを返し、説明文や余計なテキストは一切含めないでください。**
-      JSON形式: {"question": "質問文", "answer": "正解", "options": ["選択肢1", "選択肢2", "選択肢3"]}
-      optionではなくoptionsであることに注意してください。
-      すべて日本語で、自然で簡潔な文にしてください。
-      タイトルと内容を読んでいない人が問題を通してIT関連の知識を学べるようにしてください。
-      エンジニアにとって実用的で意味のある情報（技術、トレンド、影響など）を含め、無関係な雑学は避けてください。
-      選択肢は正解を1つ含み、他の2つは関連性のある誤った選択肢にしてください。
-      ダメな例: {"question": "AIが仕事を奪うと懸念されている職業は何ですか？", "answer": "声優", "options": ["声優", "医者", "教師"]}
-      タイトル: ${article.title}
-      内容: ${article.content}`;
+      const prompt = `以下のニュースタイトルと内容から、ITエンジニア向けのクイズを1問生成し、質問、正解、3つの選択肢（正解を含む）、ワンポイントアドバイスをJSON形式で返してください。
+必ず守る条件：
+**返答としてJSONデータのみを返し、説明文や余計なテキストは一切含めないでください。**
+JSON形式: {"question": "質問文", "answer": "正解", "option": ["選択肢1", "選択肢2", "選択肢3"], "advice": "短いアドバイス"}
+- 質問、正解、選択肢、アドバイスはすべて日本語で、自然で簡潔に。
+- 質問はニュースに基づき、IT技術やトレンドに関する実践的知識を問うものに。
+- 選択肢は正解を1つ含み、他の2つは関連性が高く教育的で紛らわしい誤りに。正解位置はランダムに。
+- アドバイスはエンジニア向けに、具体的で実践的な技術的洞察を20～30文字で（例: 技術名や手法を含む）。
+- 文法的に正しく、曖昧さや冗長さを避ける。ニュースの内容から逸脱しない。
+ダメな例: {"question": "AIが仕事を奪うと懸念されている職業は何ですか？", "answer": "声優", "option": ["声優", "医者", "教師"], "advice": "AIはすごいね"}
+タイトル: ${article.title}
+大まかな内容: ${article.description}
+細かい内容: ${article.content}`;
 
       const groqRes = await fetch(
         "https://api.groq.com/openai/v1/chat/completions",
@@ -52,7 +53,8 @@ export async function GET(): Promise<NextResponse> {
         quiz: {
           question: quizContent.question,
           answer: quizContent.answer,
-          option: quizContent.options,
+          option: quizContent.option,
+          advice: quizContent.advice,
         },
       };
     });
