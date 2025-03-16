@@ -1,24 +1,29 @@
 {
   "articles": [
     {
+      "title": "Samsung soundbar owners report major problems after latest firmware update - The Verge",
+      "content": "Some customers say their Q990D Dolby Atmos soundbar has effectively been bricked within the last few days.\r\nSome customers say their Q990D Dolby Atmos soundbar has effectively been bricked within the… [+1821 chars]",
+      "description": "Owners of Samsung’s HW-Q990D Dolby Atmos soundbar are complaining about bricked hardware after what appears to be a faulty firmware update."
+    },
+    {
       "title": "Hear what Horizon Zero Dawn actor Ashly Burch thinks about AI taking her job - The Verge",
-      "content": "I feel worried about this art form.\r\nAshly Burch, the award-winning voice and performance actor behind Horizon Zero Dawns Aloy one of the most prominent characters on PlayStation today has some news … [+3291 chars]"
+      "content": "I feel worried about this art form.\r\nAshly Burch, the award-winning voice and performance actor behind Horizon Zero Dawns Aloy one of the most prominent characters on PlayStation today has some news … [+3291 chars]",
+      "description": "Ashly Burch, the actor behind Horizon Zero Dawn’s Aloy, shared her thoughts about the Sony experiment that saw her character being voiced and performed by AI."
     },
     {
       "title": "AI coding assistant Cursor reportedly tells a ‘vibe coder’ to write his own damn code - TechCrunch",
-      "content": "As businesses race to replace humans with AI “agents,” coding assistant Cursor may have given us a peek at the attitude bots could bring to work, too. \r\nCursor reportedly told a user going by the nam… [+1241 chars]"
+      "content": "As businesses race to replace humans with AI “agents,” coding assistant Cursor may have given us a peek at the attitude bots could bring to work, too. \r\nCursor reportedly told a user going by the nam… [+1241 chars]",
+      "description": "AI coding assistant Cursor reportedly refused to help a user with their code, insisting that they do it themselves."
     },
     {
       "title": "Everything you say to your Echo will be sent to Amazon starting on March 28 - Ars Technica",
-      "content": null
+      "content": null,
+      "description": "Amazon is killing a privacy feature to bolster Alexa+, the new subscription assistant."
     },
     {
       "title": "The CRKD Nitro Deck for the Switch Just Dropped to Its Lowest-Ever Price - IGN",
-      "content": "One of my main frustrations with playing the Nintendo Switch in handheld mode is how uncomfortable it gets. The Joy-Con controllers that come with the Switch are great in a pinch, but they just weren… [+2446 chars]"
-    },
-    {
-      "title": "Google is replacing Google Assistant with Gemini - TechCrunch",
-      "content": "Google will replace Google Assistant on Android phones with Gemini later this year, the company announced on Friday. \r\nGoogle said in a blog post that it’ll upgrade more users from Google Assistant t… [+1314 chars]"
+      "content": "One of my main frustrations with playing the Nintendo Switch in handheld mode is how uncomfortable it gets. The Joy-Con controllers that come with the Switch are great in a pinch, but they just weren… [+2446 chars]",
+      "description": "A great Joy-Con alternative."
     }
   ]
 }
