@@ -12,15 +12,19 @@ export default function QuizClient({ initialQuizData }: QuizClientProps) {
   >("title");
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [userAnswers, setUserAnswers] = useState<string[]>([]);
-  const [selectedAnswer, setSelectedAnswer] = useState<string | null>(null); // 即時フィードバック用
+  const [selectedAnswer, setSelectedAnswer] = useState<string | null>(null);
 
-  // 回答を選択
+  // 現在の日付を取得（例: "3月15日"）
+  const today = new Date();
+  const month = today.getMonth() + 1; // 0ベースなので+1
+  const day = today.getDate();
+  const dateString = `${month}月${day}日のITニュースクイズ`;
+
   const handleAnswer = (answer: string) => {
     setSelectedAnswer(answer);
-    setScreen("feedback"); // 即時フィードバックへ
+    setScreen("feedback");
   };
 
-  // 次の問題へ進む
   const handleNext = () => {
     if (selectedAnswer !== null) {
       setUserAnswers([...userAnswers, selectedAnswer]);
@@ -40,10 +44,13 @@ export default function QuizClient({ initialQuizData }: QuizClientProps) {
       <div className="min-h-screen bg-gray-100 flex items-center justify-center p-4">
         <div className="bg-white p-8 rounded-lg shadow-lg max-w-md w-full text-center">
           <h1 className="text-3xl font-bold text-gray-800 mb-4">
-            今日のITクイズ
+            {dateString}
           </h1>
-          <p className="text-lg text-gray-600 mb-6">
+          <p className="text-lg text-gray-600 mb-4">
             ITトレンドを学べる5問のクイズに挑戦！
+          </p>
+          <p className="text-sm text-gray-500 mb-6">
+            ※AI生成のため、誤りがある場合があります
           </p>
           <button
             onClick={() => setScreen("quiz")}
@@ -63,7 +70,8 @@ export default function QuizClient({ initialQuizData }: QuizClientProps) {
       <div className="min-h-screen bg-gray-100 flex items-center justify-center p-4">
         <div className="bg-white p-6 rounded-lg shadow-lg max-w-md w-full">
           <h1 className="text-2xl font-bold text-gray-800 mb-4">
-            問題 {currentQuestion + 1}/{initialQuizData.quizzes.length}
+            {dateString} ({currentQuestion + 1}/{initialQuizData.quizzes.length}
+            )
           </h1>
           <p className="text-lg text-gray-700 mb-4">
             {currentQuiz.quiz.question}
@@ -160,6 +168,9 @@ export default function QuizClient({ initialQuizData }: QuizClientProps) {
               </div>
             ))}
           </div>
+          <p className="text-sm text-gray-500 mb-6">
+            ※AI生成のため、誤りがある場合があります。参考程度にどうぞ。
+          </p>
           <button
             onClick={() => {
               setScreen("title");
