@@ -10,12 +10,16 @@ export async function GET(): Promise<NextResponse> {
       throw new Error("Failed to fetch news");
     }
     const data = (await res.json()) as { articles: Article[] };
-    if (data.articles.length < 5) {
-      throw new Error("ニュースが不足しています");
+    const validArticles = data.articles.filter(
+      (article) => article.content !== null
+    );
+    if (validArticles.length < 5) {
+      throw new Error("nullでないニュースの数が5件未満です");
     }
 
-    const articles: Article[] = data.articles.slice(0, 5).map((article) => ({
+    const articles: Article[] = validArticles.slice(0, 5).map((article) => ({
       title: article.title,
+      content: article.content,
     }));
     const quizData: QuizData = { articles };
     const filePath = join(process.cwd(), "app/data/quiz.json");

@@ -1,0 +1,39 @@
+{
+  "quizzes": [
+    {
+      "title": "Hear what Horizon Zero Dawn actor Ashly Burch thinks about AI taking her job - The Verge",
+      "quiz": {
+        "question": "AIが職種を奪うと心配されるクリエイターはおらしますか?",
+        "answer": "声優"
+      }
+    },
+    {
+      "title": "AI coding assistant Cursor reportedly tells a ‘vibe coder’ to write his own damn code - TechCrunch",
+      "quiz": {
+        "question": "AI coding assistantがuserに対して与える態度は何ですか？",
+        "answer": "仕事を手伝えることを指示する"
+      }
+    },
+    {
+      "title": "Everything you say to your Echo will be sent to Amazon starting on March 28 - Ars Technica",
+      "quiz": {
+        "question": "Amazon Echoの音声をどこかに送信している起動日付は何ですか？",
+        "answer": "3月28日"
+      }
+    },
+    {
+      "title": "The CRKD Nitro Deck for the Switch Just Dropped to Its Lowest-Ever Price - IGN",
+      "quiz": {
+        "question": "Nintendo Switchの握りやすくしているハンディーモードのソリューションは?",
+        "answer": "Joystick"
+      }
+    },
+    {
+      "title": "Google is replacing Google Assistant with Gemini - TechCrunch",
+      "quiz": {
+        "question": "GoogleはAndroidスマートフォンでGoogle Assistantを置き換えるために、新しいAssistantを使用するようです。この新しいAssistantは何ですか？",
+        "answer": "Gemini"
+      }
+    }
+  ]
+}
